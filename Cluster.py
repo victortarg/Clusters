@@ -32,7 +32,7 @@ def preenche_ordem(grafo, v, visitado, pilha):
 
 # Parte 3: Função principal que aplica o algoritmo de Kosaraju para encontrar os componentes fortemente conectados
 def kosaraju_matriz(matriz):
-    n = len(matriz)  #numero de vertices nno grafo
+    n = len(matriz)  #numero de vertices no grafo
     visitado = [False] * n # lista de visitados, iniciando todos False
     pilha = [] # pilha que vai ser adicionado com os vertices em ordem de termino do DFS
 
@@ -41,17 +41,17 @@ def kosaraju_matriz(matriz):
         if not visitado[i]:     
             preenche_ordem(matriz, i, visitado, pilha)
 
-    transposta = transpor_grafo(matriz) #transpor o grafo
-    visitado = [False] * n #limpa a lista de visitados antes de começar o segundo DFS
-    componentes = [] #Lista que vai armazenar os componentes fortemente conectados (achar os clusters)
+    transposta = transpor_grafo(matriz)
+    visitado = [False] * n 
+    componentes = []
 
     #enquanto nao ta vazio.
     while pilha:
         v = pilha.pop() #retira os vertices da pilha
         if not visitado[v]: # se o vertice nao foi visitado, realiza o dfs no grafo transposto
-            componente = [] #Lista que vai armazenar os componentes fortemente conectados (achar os clusters)
-            dfs(transposta, v, visitado, componente) #aplica do DFS
-            componentes.append(componente) # adiciona a componente encontrada a lista de componentes
+            componente = [] 
+            dfs(transposta, v, visitado, componente)
+            componentes.append(componente)
 
     return componentes # retornar a lista com os componentes fortemente ligados.
 
