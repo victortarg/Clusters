@@ -67,4 +67,3 @@ matriz = [
 sugerir_amizades_matriz(matriz)
 
 
-# C:\Users\jpkab\OneDrive\Desktop\doc\Cenario2\Cluster.py
